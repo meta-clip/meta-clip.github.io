@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <!-- ✦ Social banners (fill paths to your exported banners) -->
-  <meta name="description" content="SelfCite is a self-supervised method that teaches an LLM to produce fine-grained, accurate, sentence-level citations without any human labels or proprietary APIs.">
-  <meta property="og:title" content="SelfCite: Self-Supervised Alignment for Context Attribution"/>
-  <meta property="og:description" content="SelfCite boosts citation correctness on LongBench-Cite by up to 5.3 F1 with only self-supervised rewards."/>
+  <meta name="description" content="Meta CLIP 2 is a worldwide scaling recipe for training CLIP on web-scale multilingual image–text pairs, achieving state-of-the-art across English and non-English benchmarks.">
+  <meta property="og:title" content="Meta CLIP 2: A Worldwide Scaling Recipe"/>
+  <meta property="og:description" content="A simple, generalizable recipe to train CLIP from worldwide web data with mutual benefits across English and non-English, setting new multilingual SOTA."/>
   <meta property="og:url" content="https://your-domain.com/selfcite"/>
-  <meta property="og:image" content="static/images/selfcite_banner.png" />
+  <meta property="og:image" content="static/images/metaclip2.jpg" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-  <meta name="twitter:title" content="SelfCite: Self-Supervised Alignment for Context Attribution"/>
-  <meta name="twitter:description" content="Sentence-level, verifiable citations with zero human labels."/>
-  <meta name="twitter:image" content="static/images/selfcite_twitter.png">
+  <meta name="twitter:title" content="Meta CLIP 2: A Worldwide Scaling Recipe"/>
+  <meta name="twitter:description" content="Worldwide scaling recipe for CLIP on multilingual web data with new SOTA results."/>
+  <meta name="twitter:image" content="static/images/metaclip2.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="keywords" content="LLM, citation, hallucination, attribution, self-supervised, SelfCite">
+  <meta name="keywords" content="CLIP, vision-language, contrastive learning, multilingual, retrieval, zero-shot, Meta CLIP 2, web-scale">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>SelfCite · Self-Supervised Alignment for LLM Citations</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>Meta CLIP 2 · A Worldwide Scaling Recipe</title>
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <!-- Bulma + extras -->
@@ -57,44 +57,51 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SelfCite: Self-Supervised Alignment for Context Attribution in Large Language Models</h1>
+          <h1 class="title is-1 publication-title">Meta CLIP 2: A Worldwide Scaling Recipe</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><a href="https://people.csail.mit.edu/yungsung/" target="_blank">Yung-Sung Chuang</a>,</span>
-            <span class="author-block"><a href="https://bencw99.github.io" target="_blank">Benjamin Cohen-Wang</a>,</span>
-            <span class="author-block"><a href="https://www.szj.io" target="_blank">Shannon Zejiang Shen</a>,</span>
-            <span class="author-block"><a href="https://zhaofengwu.github.io" target="_blank">Zhaofeng Wu</a>,</span>
-            <span class="author-block"><a href="https://howardhsu.github.io/" target="_blank">Hu Xu</a>,</span>
-            <span class="author-block"><a href="https://victorialin.org/" target="_blank">Xi Victoria Lin</a>,</span>
+            <span class="author-block"><a href="https://x.com/yangli625" target="_blank">Yang Li</a>,</span>
+            <span class="author-block"><a href="https://x.com/dongwang218" target="_blank">Dong Wang</a>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=P7ma7pAAAAAJ&hl=en" target="_blank">Ching-Feng Yeh</a>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/kehan-lyu-588217155/" target="_blank">Kehan Lyu</a>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=-loJh1EAAAAJ" target="_blank">Ramya Raghavendra</a>,</span>
             <span class="author-block"><a href="http://people.csail.mit.edu/jrg" target="_blank">James Glass</a>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/leo-huang/" target="_blank">Lifei Huang</a>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=lMkTx0EAAAAJ&hl=en" target="_blank">Jason Weston</a>,</span>
+            <span class="author-block"><a href="https://www.cs.washington.edu/people/faculty/lsz" target="_blank">Luke Zettlemoyer</a>,</span>
+            <span class="author-block"><a href="https://xinleic.xyz/" target="_blank">Xinlei Chen</a>,</span>
+            <span class="author-block"><a href="https://liuzhuang13.github.io/" target="_blank">Zhuang Liu</a>,</span>
+            <span class="author-block"><a href="https://www.sainingxie.com/" target="_blank">Saining Xie</a>,</span>
+            <span class="author-block"><a href="https://scottyih.org" target="_blank">Wen-tau Yih</a>,</span>
             <span class="author-block"><a href="https://swdanielli.github.io/" target="_blank">Shang-Wen Li</a>,</span>
-            <span class="author-block"><a href="https://scottyih.org" target="_blank">Wen-tau Yih</a></span>
+            <span class="author-block"><a href="https://howardhsu.github.io/" target="_blank">Hu Xu</a></span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">MIT CSAIL · Meta FAIR<br/>ICML 2025</span>
+            <span class="author-block">MIT CSAIL · Meta FAIR<br/>To appear at NeurIPS 2025</span>
           </div>
           <div class="column has-text-centered" style="margin-top:0.75rem;">
             <div class="publication-links">
               <!-- PDF -->
               <span class="link-block">
-                <a href="https://openreview.net/pdf?id=rKi8eyJBoB" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/2507.22062" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
                 </a>
               </span>
               <!-- Code -->
               <span class="link-block">
-                <a href="https://github.com/facebookresearch/SelfCite" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/facebookresearch/MetaCLIP" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
                 </a>
               </span>
               <!-- Model -->
               <span class="link-block">
-                <a href="https://huggingface.co/voidism/SelfCite-8B" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">🤗</span><span>Model</span>
+                <a href="https://huggingface.co/models?other=metaclip_2" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">🤗</span><span>Models</span>
                 </a>
               </span>
               <!-- arXiv -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2502.09604" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/2507.22062" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
                 </a>
               </span>
@@ -114,55 +121,10 @@
         <!-- Title & Authors -->
         <!-- Main Content -->
         <div class="content has-text-justified">
-          <p>LLM-based assistants can read through millions of words of long documents and spit out confident answers in seconds—<strong>but can you trust those answers?</strong>—<em>Probably not.</em> Hallucinations and misinterpretations still plague even the most advanced proprietary models. As a result, users are often left with the burden of verifying answers themselves. </p>
-          <p class="has-text-centered"><img src="static/images/cite.png" alt="LLM outputs with citations" style="max-width:100%"></p>
-          <p>To ease this burden, we can ask LLMs to also <strong>cite supporting context</strong>—allowing users to verify answers in just a few seconds. But in practice, these citations are often inaccurate, pointing to unrelated or insufficient evidence. And fine-tuning LLMs to fix this problem typically requires expensive <strong>data annotation</strong>.</p>
-          <p><strong>SelfCite</strong> is our solution: a <em>fully self-supervised</em> method that teaches an LLM to produce <strong>fine-grained, accurate, sentence-level citations</strong>—<em>without a single human-labeled example or proprietary API call</em>.</p>
-
-          <h2 class="title is-4">What’s the secret?</h2>
-
-          <blockquote>
-            <p><strong>Our core idea:</strong> “If removing the cited text makes the model generate a different response—and keeping only the cited text still makes the model generate almost the same response—you’ve found the right evidence that is <strong>necessary</strong> and <strong>sufficient</strong>.”</p>
-          </blockquote>
-
-          <p class="has-text-centered"><img src="static/images/idea.png" alt="Illustration of SelfCite idea" style="max-width:100%"></p>
-
-          <p>Explanation:</p>
-          <ol>
-            <li><strong>Full context $C$</strong> (📚) + question $Q$ (🔎) → the LLM generates an response $R$ (💡) and a citation span $E$.</li>
-            <li><strong>Delete $E$</strong> from $C$ → if $E$ is <em>necessary</em>, the LLM can no longer faithfully produce $R$.</li>
-            <li><strong>Keep only $E$</strong> → if $E$ is <em>sufficient</em>, the LLM still produces (almost) the same $R$.</li>
-          </ol>
-
-          <h2 class="title is-4">How do we turn this idea into a reward?</h2>
-
-          <p class="has-text-centered"><img src="static/images/SelfCite.png" alt="SelfCite reward calculation" style="max-width:100%"></p>
-
-          <p>We simply measure the <strong>probability change</strong> of generating $R$ after ablating the context. Two quantities are all we need:</p>
-
-          <h3 class="title is-5">Probability&nbsp;Drop</h3>
-          <p>$$\operatorname{Prob\text{-}Drop}(E)=\log p_{\text{LM}}(R\mid C)\;\; -\;\; \log p_{\text{LM}}\bigl(R\mid C\setminus E\bigr).$$</p>
-          <p>This captures whether the cited sentences are <em>necessary</em> for the answer.</p>
-
-          <h3 class="title is-5">Probability&nbsp;Hold</h3>
-          <p>$$\operatorname{Prob\text{-}Hold}(E)=\log p_{\text{LM}}\bigl(R\mid E\bigr)\;\; -\;\; \log p_{\text{LM}}(R\mid C).$$</p>
-          <p>This checks if the cited sentences alone are <em>sufficient</em> to sustain the answer.</p>
-
-          <blockquote style="font-size: 0.9rem;">
-            <p>Numbers like “0.97 - 0.01” in the figure are for intuition; the implementation uses log-domain probabilities.</p>
-          </blockquote>
-
-          <h3 class="title is-5">Reward = Prob-Drop + Prob-Hold</h3>
-          <p>$$\text{Reward}(E)=\log p_{\text{LM}}(R\mid E)\;\; -\;\; \log p_{\text{LM}}\bigl(R\mid C\setminus E\bigr).$$</p>
-          <p>This combines <em>necessity</em> and <em>sufficiency</em> in a single <strong>self-supervised</strong> reward—computed with just <strong>two forward passes</strong> and no external annotations or models needed.</p>
-
-          <h2 class="title is-3">Experiments</h2>
-
-          <p>We apply this reward in Best-of-N (BoN) sampling and preference optimization with <a href="https://arxiv.org/abs/2405.14734" target="_blank">SimPO</a>. Starting from LongCite-8B (73.8 % F1), BoN and SimPO with the SelfCite reward boost its citation F1 on LongBench-Cite by <strong>up to 5.3 points</strong> (79.1 % F1), nearly closing the gap with far larger proprietary systems.</p>
-
-          <p class="has-text-centered"><img src="static/images/citation_f1_scores.svg" alt="Citation F1 scores" style="max-width:100%"></p>
-
-          <p>The hatched grey bar is <a href="https://www.anthropic.com/news/introducing-citations-api" target="_blank">Anthropic’s Claude Citations API</a>—still the overall leader thanks to the much larger LLM of Claude—but the margin is now only ~2 percentage points on average, and SelfCite with merely an 8B model <em>outperforms</em> it on LongBench-Chat and GovReport.</p>
+          <p>Contrastive Language-Image Pretraining (CLIP) is a popular foundation model, supporting tasks from zero-shot classification and retrieval to serving as encoders for multimodal large language models (MLLMs). Although CLIP has been successfully trained on billion-scale image–text pairs from the English web, scaling CLIP further to learn from worldwide web data is challenging: (1) there is no curation method to handle data points from the non-English world; (2) existing multilingual CLIP models underperform their English-only counterparts—the common “curse of multilinguality.”</p>
+          <p><strong>Meta CLIP 2</strong> presents the first recipe to train CLIP from scratch on worldwide web-scale image–text pairs. To generalize the findings, we conduct rigorous ablations with minimal changes necessary to address the above challenges and provide a simple recipe that enables <em>mutual benefits</em> between English and non-English data.</p>
+          <p>In zero-shot ImageNet classification, Meta CLIP 2 ViT-H/14 surpasses its English-only counterpart by 0.8% and mSigLIP by 0.7%, and—without system-level confounders such as translation or bespoke architectural changes—sets new state-of-the-art on multilingual benchmarks, including CVQA (57.4%), Babel-ImageNet (50.2%), and XM3600 (64.3% image-to-text retrieval).</p>
+          <p>For details, please see the paper on <a href="https://arxiv.org/abs/2507.22062" target="_blank">arXiv</a>.</p>
         </div>
       </div>
     </div>
@@ -175,114 +137,17 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-10" style="font-size:1.3rem;">
-    <h2 class="title is-3">How does the reward work?</h2>
-    <!-- Will render interactive citation widget -->
-    <!-- The widget code (CSS+HTML+JS) is inlined for portability -->
-
-    <style>
-      /*  ✦  overall frame  */
-      .cite-demo{
-        font-family: system-ui, sans-serif;
-        max-width: 900px;
-        margin: 1.2rem auto;
-        padding: 1rem 1.25rem;
-        background: #fafafa;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-      }
-      /*  ✦  scrollable context  */
-      .cite-context{
-        max-height: 500px;
-        overflow-y: auto;
-        padding: .6rem .8rem;
-        background: #fff;
-        border: 1px solid #dcdcdc;
-        border-radius: 6px;
-        font-size: .9rem;
-        line-height: 1.3;
-      }
-      .cite-context p{ margin:0 0 .45rem; }
-      /*  ✦  highlight colours  */
-      .highlight-green{ background: rgba(0,160,0,.18); }
-      .highlight-red  { background: rgba(220,0,0,.18); }
-      /*  ✦  citation chips  */
-      .citations{
-        display: flex; flex-wrap: wrap; gap: .5rem;
-        margin: .9rem 0 0; padding: 0;
-      }
-      .citations li{
-        list-style: none;
-        cursor: pointer;
-        font-size: .85rem;
-        padding: .25rem .55rem;
-        background: #fff;
-        border: 1px solid #c7c7c7;
-        border-radius: 5px;
-        transition: background .15s;
-      }
-      .citations li:hover{ background:#f0f0f0; }
-      /*  ✦  mobile tweaks  */
-      @media(max-width:960px){
-        .cite-demo{ padding:.8rem .9rem; }
-        .cite-context{ max-height:360px; font-size:.85rem; }
-      }
-    </style>
-
-    <div>
-      <p class="is-size-5">We provide a simple example to show how the SelfCite rewards are assigned to the citation candidates in BoN. Please hover over the candidate citations to see which sentences they cover, and check their corresponding reward values. You will see the rewards are getting lower when more unrelated sentences are included in the citation.</p>
-    </div>
-    <div class="cite-demo" id="selfcite-widget">
-      <!--  ❖  context sentences  -->
-      <div class="cite-context">
-        <!-- sample context copied from prompt -->
-        <p id="sent-302" class="context-sent correct"><strong>[302] ✅</strong> In general, consumer advocates believe that any comprehensive federal privacy policy should complement, and not supplant, sector-specific privacy legislation or state-level legislation.</p>
-        <p id="sent-303" class="context-sent correct"><strong>[303] ✅</strong> Finding a global consensus on how to balance open data flows and privacy protection may be key to maintaining trust in the digital environment and advancing international trade.</p>
-        <p id="sent-304" class="context-sent wrong"><strong>[304]</strong> One study found that over 120 countries have laws related to personal data protection.</p>
-        <p id="sent-305" class="context-sent wrong"><strong>[305]</strong> Divergent national privacy approaches raise the costs of doing business and make it harder for governments to collaborate and share data.</p>
-        <p id="sent-306" class="context-sent correct"><strong>[306] ✅</strong> A system for global interoperability in a least trade-restrictive and nondiscriminatory way between different national systems could help minimize costs and allow entities in different jurisdictions with varying online privacy regimes to share data via cross-border data flows.</p>
-        <p id="sent-307" class="context-sent wrong"><strong>[307]</strong> Such a system could help avoid fragmentation of the internet between European, Chinese, and American spheres.</p>
-        <p id="sent-308" class="context-sent wrong"><strong>[308]</strong> For example, Figure 2 suggests the potential of an interoperability system that allows data to flow freely between GDPR- and CBPR-certified economies.</p>
-        <p id="sent-309" class="context-sent wrong"><strong>[309]</strong> The OECD guidelines, G-20 principles, APEC CBPR, CPTPP, and USMCA provisions demonstrate an evolving understanding …</p>
-        <p id="sent-310" class="context-sent wrong"><strong>[310]</strong> The various trade agreements and initiatives … may ultimately pave the way for a broader multilateral understanding.</p>
-        <p id="sent-311" class="context-sent wrong"><strong>[311]</strong> Congress may consider the trade-related aspects of data flows in trade agreements …</p>
+        <h2 class="title is-3">Highlights</h2>
+        <ul>
+          <li>Simple, generalizable data curation for worldwide web-scale image–text pairs</li>
+          <li>Mutual benefits between English and non-English data without translation</li>
+          <li>Zero-shot ImageNet: ViT-H/14 +0.8% over English-only; +0.7% over mSigLIP</li>
+          <li>Multilingual SOTA: CVQA 57.4%, Babel-ImageNet 50.2%, XM3600 64.3% (i2t)</li>
+        </ul>
       </div>
-
-      <!--  ❖  one-line QA  -->
-      <p style="margin:.8rem 0 .4rem"><strong>Query&nbsp;🔎</strong> Please write a one-page summary of the above government report.</p>
-      <p style="margin:0 0 .8rem;font-size:.9rem;line-height:1.35"><strong>Answer &nbsp;💡</strong> […] The report concludes by noting that finding a global consensus on how to balance open data flows and privacy protection may be key to maintaining trust in the digital environment and advancing international trade. The report suggests that Congress may consider comprehensive privacy legislation and examine the potential challenges and implications of building a system of interoperability between different national privacy regimes […] <i>(a single statement)</i></p>
-      <p style="margin:0 0 .8rem;font-size:.9rem;line-height:1.35"><strong>Best-of-N candidate citations&nbsp;🎲</strong> <span style="font-size:.85rem;color:#666">(hover to highlight)</span></p>
-
-      <!--  ❖  candidate citations  -->
-      <ul class="citations">
-        <li data-sents="302,303,306"><strong>(1)</strong> [302-303][306] ✅ <span class="reward">Reward: 0.578</span></li>
-        <li data-sents="303,305,306"><strong>(2)</strong> [303][305-306] ❌ <span class="reward">Reward: 0.547</span></li>
-        <li data-sents="303,304,308,310,311"><strong>(3)</strong> [303-304][308][310-311] ❌ <span class="reward">Reward: 0.461</span></li>
-        <li data-sents="303,309,311"><strong>(4)</strong> [303][309][311] ❌ <span class="reward">Reward: 0.375</span></li>
-      </ul>
     </div>
-
-    <script>
-    (function(){
-      function toggle(ids,on){
-        ids.forEach(function(id){
-          var el=document.getElementById('sent-'+id.trim());
-          if(!el) return;
-          var ok=el.classList.contains('correct');
-          el.classList.toggle(ok?'highlight-green':'highlight-red',on);
-        });
-      }
-      document.querySelectorAll('#selfcite-widget .citations li').forEach(function(li){
-        var ids=li.dataset.sents.split(',');
-        li.onmouseover=function(){toggle(ids,true);} ;
-        li.onmouseout =function(){toggle(ids,false);} ;
-        li.onclick   =function(){ var active=li.classList.toggle('active'); toggle(ids,active); };
-      });
-    })();
-    </script>
   </div>
-</div>
-</div>
-</section>
+  </section>
 
 <!-- ─────────────────────────────── Conclusion ─────────────────────────────── -->
 <section class="section">
@@ -290,7 +155,7 @@
     <div class="columns is-centered">
       <div class="column is-10" style="font-size:1.3rem;">
         <h2 class="title is-3">Conclusion</h2>
-        <p><strong>SelfCite</strong> shows that LLMs can learn to generate precise, sentence-level citations through self-supervision.  By rewarding evidence that is simultaneously <em>necessary</em> and <em>sufficient</em> for an answer, our method closes much of the citation-quality gap between smaller open models and far larger proprietary systems—without a single human label or external model APIs.  We hope this lightweight approach encourages broader adoption of verifiable LLMs and sparks future work on self-improving context attribution.  All code and models are released, so you can reproduce our results or build on them in your own research.</p>
+        <p><strong>Meta CLIP 2</strong> demonstrates that scaling CLIP on worldwide web data can be both simple and effective. With minimal yet principled changes for data curation and training, our recipe delivers mutual gains across English and non-English, and achieves new state-of-the-art on multiple multilingual benchmarks while maintaining strong English performance. We release the recipe and code to facilitate reproduction and adoption in future vision–language research.</p>
       </div>
     </div>
   </div>
@@ -304,12 +169,15 @@
     <h2 class="title is-3">Citation</h2>
     <p>To cite this work, please use the following BibTeX entry:</p>
 
-<pre style="font-size: 0.8rem;">@inproceedings{chuang2025selfcite,
-    title={SelfCite: Self-Supervised Alignment for Context Attribution in Large Language Models},
-    author={Yung-Sung Chuang and Benjamin Cohen-Wang and Zejiang Shen and Zhaofeng Wu and Hu Xu and Xi Victoria Lin and James R. Glass and Shang-Wen Li and Wen-tau Yih},
-    booktitle={Forty-second International Conference on Machine Learning},
+<pre style="font-size: 0.8rem;">@inproceedings{chuang2025metaclip2,
+    title={Meta CLIP 2: A Worldwide Scaling Recipe},
+    author={Yung-Sung Chuang and Yang Li and Dong Wang and Ching-Feng Yeh and Kehan Lyu and Ramya Raghavendra and James Glass and Lifei Huang and Jason Weston and Luke Zettlemoyer and Xinlei Chen and Zhuang Liu and Saining Xie and Wen-tau Yih and Shang-Wen Li and Hu Xu},
+    booktitle={Advances in Neural Information Processing Systems},
+    note={to appear},
     year={2025},
-    url={https://openreview.net/forum?id=rKi8eyJBoB}
+    url={https://arxiv.org/abs/2507.22062},
+    eprint={2507.22062},
+    archivePrefix={arXiv}
 }</pre>
 
   </div>

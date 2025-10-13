@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <!-- ✦ Social banners (fill paths to your exported banners) -->
   <meta name="description" content="Meta CLIP 2 is a worldwide scaling recipe for training CLIP on web-scale multilingual image–text pairs, achieving state-of-the-art across English and non-English benchmarks.">
-  <meta property="og:title" content="MetaCLIP 2: A Worldwide Scaling Recipe"/>
+  <meta property="og:title" content="Meta CLIP 2: A Worldwide Scaling Recipe"/>
   <meta property="og:description" content="A simple, generalizable recipe to train CLIP from worldwide web data with mutual benefits across English and non-English, setting new multilingual SOTA."/>
   <meta property="og:url" content="https://your-domain.com/selfcite"/>
   <meta property="og:image" content="static/images/metaclip2.jpg" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-  <meta name="twitter:title" content="MetaCLIP 2: A Worldwide Scaling Recipe"/>
+  <meta name="twitter:title" content="Meta CLIP 2: A Worldwide Scaling Recipe"/>
   <meta name="twitter:description" content="Worldwide scaling recipe for CLIP on multilingual web data with new SOTA results."/>
   <meta name="twitter:image" content="static/images/metaclip2.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords" content="CLIP, vision-language, contrastive learning, multilingual, retrieval, zero-shot, Meta CLIP 2, web-scale">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>MetaCLIP 2 · A Worldwide Scaling Recipe</title>
+  <title>Meta CLIP 2 · A Worldwide Scaling Recipe</title>
   <link rel="icon" type="image/png" href="static/images/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -57,7 +57,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">MetaCLIP 2: A Worldwide Scaling Recipe</h1>
+          <h1 class="title is-1 publication-title"><span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Meta CLIP 2</span>: A Worldwide Scaling Recipe</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><a href="https://people.csail.mit.edu/yungsung/" target="_blank">Yung-Sung Chuang</a>,</span>
             <span class="author-block"><a href="https://x.com/yangli625" target="_blank">Yang Li</a>,</span>
@@ -112,60 +112,902 @@
     </div><!-- container -->
   </div><!-- hero-body -->
 </section>
-
 <!-- ─────────────────────────────── Abstract ─────────────────────────────── -->
 <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-10" style="font-size:1.3rem;">
-        <!-- Title & Authors -->
-        <!-- Main Content -->
-        <div class="content has-text-justified">
-          <p>Contrastive Language-Image Pretraining (CLIP) is a popular foundation model, supporting tasks from zero-shot classification and retrieval to serving as encoders for multimodal large language models (MLLMs). Although CLIP has been successfully trained on billion-scale image–text pairs from the English web, scaling CLIP further to learn from worldwide web data is challenging: (1) there is no curation method to handle data points from the non-English world; (2) existing multilingual CLIP models underperform their English-only counterparts—the common “curse of multilinguality.”</p>
-        </div>
-        <figure class="image my-5">
-          <img src="static/images/metaclip2.jpg" alt="Meta CLIP 2">
-        </figure>
-        <div class="content has-text-justified">
-          <p><strong>MetaCLIP 2</strong> presents the first recipe to train CLIP from scratch on worldwide web-scale image–text pairs. To generalize the findings, we conduct rigorous ablations with minimal changes necessary to address the above challenges and provide a simple recipe that enables <em>mutual benefits</em> between English and non-English data.</p>
-          <p>In zero-shot ImageNet classification, Meta CLIP 2 ViT-H/14 surpasses its English-only counterpart by 0.8% and mSigLIP by 0.7%, and—without system-level confounders such as translation or bespoke architectural changes—sets new state-of-the-art on multilingual benchmarks, including CVQA (57.4%), Babel-ImageNet (50.2%), and XM3600 (64.3% image-to-text retrieval).</p>
-          <p>For details, please see the paper on <a href="https://arxiv.org/abs/2507.22062" target="_blank">arXiv</a>.</p>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <div class="content has-text-justified">
+            <p>
+              CLIP has become a cornerstone of modern AI, powering everything from zero-shot image classification to serving as the vision backbone for multimodal LLMs. 
+              We've successfully trained CLIP on billions of English image-text pairs from the web. But here's the problem: <strong>what about the rest of the world that makes up the other 60% of the web?</strong>
+            </p>
+            <p>
+              When we try to scale CLIP to learn from worldwide web data, we hit two major roadblocks. 
+              First, there's no existing methods to curate and balance data from non-English languages—the methods that work for English won't trivially transfer. 
+              Second, existing multilingual CLIP models tend to perform <em>worse</em> than their English-only counterparts. 
+              It's the classic <strong>"curse of multilinguality"</strong>: trying to do everything means you end up doing nothing particularly well. It's common for a multilingual model to perform worse than an English-only model on the English-only benchmarks.
+            </p>
+          </div>
+          <figure class="image my-5">
+            <img src="static/images/metaclip2.jpg" alt="Meta CLIP 2">
+          </figure>
+          <div class="content has-text-justified">
+            <p>
+              <strong>We're excited to introduce MetaCLIP 2</strong>—the first practical recipe for training CLIP from scratch on worldwide web-scale data. 
+              Our approach is surprisingly simple: through careful ablations, we identified the minimal set of changes needed to make English and non-English data work together. 
+              The result? A recipe that creates <em>mutual benefits</em> between languages rather than forcing them to compete.
+            </p>
+            <p>
+              And it works. Our ViT-H/14 model beats its English-only counterpart by 0.8% on ImageNet zero-shot classification and outperforms mSigLIP by 0.7%. 
+              More importantly, without any translation tricks or architectural gymnastics, we're setting new state-of-the-art results on multilingual benchmarks: 
+              57.4% on CVQA, 50.2% on Babel-ImageNet, and 64.3% on XM3600 image-to-text retrieval. 
+              The best part? <strong>English performance doesn't suffer—it actually improves.</strong>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- ─────────────────────────────── Demo Widget ─────────────────────────────── -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10" style="font-size:1.3rem;">
-        <h2 class="title is-3">Highlights</h2>
-        <ul>
-          <li>Simple, generalizable data curation for worldwide web-scale image–text pairs</li>
-          <li>Mutual benefits between English and non-English data without translation</li>
-          <li>Zero-shot ImageNet: ViT-H/14 +0.8% over English-only; +0.7% over mSigLIP</li>
-          <li>Multilingual SOTA: CVQA 57.4%, Babel-ImageNet 50.2%, XM3600 64.3% (i2t)</li>
-        </ul>
+  </section>
+  
+  
+  <!-- ─────────────────────────────── Motivation: Imbalance ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">Why Directly Training on Web Data Fails</h2>
+          <p>
+            Let's start with the fundamental problem. If you just scrape the web and train CLIP on whatever you find, you'll quickly run into trouble. 
+            Why? Because <strong>the Internet is wildly imbalanced</strong>.
+          </p>
+          <p>
+            A handful of common concepts—think "cat," "dog," "car"—appear millions of times and completely dominate your training data. 
+            Meanwhile, more specific concepts like "Taipei 101" or "MIT Dome" show up rarely, making them nearly impossible for the model to learn. 
+            The model ends up great at recognizing cats, but terrible at everything else. Not exactly what we're going for.
+          </p>
+          <figure class="image my-5">
+            <img src="static/images/img1.png" alt="Web Data Imbalance">
+            <figcaption class="has-text-grey">Head vs. Long-tail Concepts</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+  
+  
+  <!-- ─────────────────────────────── Solution: Balancing & Substring Matching ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">MetaCLIP 1: Substring Matching + Balancing</h2>
+          <p>
+            So how do we fix this imbalance? The original MetaCLIP introduced a clever <strong>metadata-driven approach</strong> with three simple steps:
+          </p>
+          <p>
+            <strong>Step 1: Build a concept dictionary.</strong> We start by creating a list of real-world concepts using Wikipedia and WordNet. 
+            This gives us everything from common words like "dog" and "cat" to specific landmarks like "Taipei 101" and "MIT Dome."
+          </p>
+          <p>
+            <strong>Step 2: Match captions to concepts.</strong> For each image-text pair, we check if the caption mentions any concept in our dictionary. 
+            If it doesn't match anything? We throw it out. This helps filter out low-quality or irrelevant data.
+          </p>
+          <p>
+            <strong>Step 3: Balance the dataset.</strong> Here's the key insight: we cap the maximum number of images per concept at some threshold <em>t</em>. 
+            This prevents "cat" from appearing a million times while "Taipei 101" only shows up once. For example:
+          </p>
+          <ul>
+            <li>To create 400M balanced pairs, we start with ~1.6B scraped pairs and set <em>t = 20k</em></li>
+            <li>To create 2.5B balanced pairs, we start with ~10.7B scraped pairs and set <em>t = 170k</em></li>
+          </ul>
+          <figure class="image my-5">
+            <img src="static/images/img2.png" alt="Balancing Results">
+            <figcaption class="has-text-grey">English filtering → Substring matching → Balancing improves ImageNet zero-shot performance</figcaption>
+          </figure>
+          <p>The results speak for themselves: this pipeline dramatically improves performance on ImageNet and other benchmarks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- ─────────────────────────────── Worldwide Curation ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">What's the Bottleneck?</h2>
+          <p>
+            MetaCLIP 1 works great for English, but there's a huge problem: <strong>the English filtering step throws away 60% of the web</strong>.
+          </p>
+          <p>
+            Think about what we're losing. The original pipeline only keeps English captions, discarding a massive amount of high-quality data in Chinese, Spanish, Arabic, and hundreds of other languages. 
+            This isn't just about missing out on multilingual capabilities—it's about missing out on <em>diverse visual concepts</em> that simply don't appear as often in English data.
+          </p>
+          <p>
+            Our goal with MetaCLIP 2 isn't just to add multilingual support (though that's nice). 
+            We want to <strong>improve the model's overall visual understanding</strong> by tapping into 2.5× more training data. 
+            That's why we evaluate on both English-only benchmarks AND multilingual datasets—to prove that going worldwide helps everyone, not just non-English users.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
-<!-- ─────────────────────────────── Conclusion ─────────────────────────────── -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-10" style="font-size:1.3rem;">
-        <h2 class="title is-3">Conclusion</h2>
-        <p><strong>Meta CLIP 2</strong> demonstrates that scaling CLIP on worldwide web data can be both simple and effective. With minimal yet principled changes for data curation and training, our recipe delivers mutual gains across English and non-English, and achieves new state-of-the-art on multiple multilingual benchmarks while maintaining strong English performance. We release the recipe and code to facilitate reproduction and adoption in future vision–language research.</p>
+  <!-- ─────────────────────────────── Worldwide Curation ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">MetaCLIP 2: Worldwide Curation Pipeline</h2>
+          <p>
+            Here's where things get interesting. We extend the entire pipeline to work with <strong>329 Wikipedia languages</strong>. 
+          </p>
+          <br/>
+          <p>
+            <strong>First challenge: substring matching across languages.</strong> 
+            We build multilingual metadata from Wikipedia and OpenWordNet, extracting unigrams, bigrams, and article titles. 
+            For languages with writing systems that are not space-separated (like Chinese and Japanese), we use custom tokenizers to handle them properly. 
+            Nothing revolutionary here—just careful engineering.
+          </p>
+          <br/>
+          <p>
+            <strong>Second challenge: balancing 329 languages.</strong> 
+            Remember that threshold <em>t</em> we used for English? That number doesn't work for other languages. 
+            English has way more web data than Spanish, so using the same threshold everywhere would include too many tail concepts in the non-English data. 
+            Manually tuning <em>t</em> for 300+ languages? It's infeasible.
+          </p>
+          <br/>
+          <p>
+            <strong>Our solution: keep the tail ratio constant.</strong> 
+            We discovered that in English MetaCLIP, the least frequent concepts (the "tail") contain 6% of total image-text pairs across different data scales during scaling experiments. 
+            So instead of fixing <em>t</em>, we find the threshold for each language that keeps the tail at 6%, allowing the non-English data to contain the same percentage of tail concepts as the English data. 
+            It's a simple heuristic that works beautifully across all languages.
+          </p>
+  
+          <figure class="image my-5">
+            <img src="static/images/threshold.gif" alt="Language Threshold">
+            <figcaption class="has-text-grey">
+              We set <em>t</em> on English data to achieve 6% tail concepts. 
+              For each new language (e.g., Spanish), we find the threshold where the rarest 6% of image-text pairs begin.
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+
+  <!-- ─────────────────────────────── Algorithm Explanation ─────────────────────────────── -->
+  <section class="section" style="background-color: #fafafa;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">The Algorithm: A Closer Look</h2>
+          <p>
+            Our curation algorithm extends MetaCLIP to handle 329 languages. Here's the complete pseudo-code:
+          </p>
+          
+          <div class="box" style="background: white; padding: 1.5rem; margin: 2rem 0; overflow-x: auto;">
+            <pre style="background: #f8f9fa; padding: 1.5rem; border-radius: 4px; font-size: 0.85rem; line-height: 1.6; overflow-x: auto;"><code>"""
+<span style="color: #2c5282;">Input:</span> 
+  D (list): raw (image, text) pairs, each text.lang assigned by LID
+  M (dict): worldwide metadata, key=language code, value=metadata for that language
+  t_en (int): English threshold (OpenAI CLIP=20k, MetaCLIP=170k)
+
+<span style="color: #2c5282;">Output:</span> 
+  D_star (list): curated image-text pairs
+"""
+
+<span style="color: #805ad5;"># Helper functions to compute t for each language</span>
+<span style="color: #c53030;">def</span> <span style="color: #2c5282;">t_to_p</span>(t, entry_count):
+    <span style="color: #805ad5;"># Convert threshold t to tail proportion p</span>
+    <span style="color: #c53030;">return</span> entry_count[entry_count < t].sum() / entry_count.sum()
+
+<span style="color: #c53030;">def</span> <span style="color: #2c5282;">p_to_t</span>(p, entry_count):
+    <span style="color: #805ad5;"># Convert tail proportion p to threshold t</span>
+    sorted_count = np.sort(entry_count)
+    cumsum_count = np.cumsum(sorted_count)
+    cumsum_prob = cumsum_count / sorted_count.sum()
+    <span style="color: #c53030;">return</span> sorted_count[(np.abs(cumsum_prob - p)).argmin()]
+
+<span style="color: #2c5282; font-weight: bold;"># Stage 1: Substring matching</span>
+entry_counts = {lang: np.zeros(len(M[lang])) <span style="color: #c53030;">for</span> lang <span style="color: #c53030;">in</span> M}
+<span style="color: #c53030;">for</span> image, text <span style="color: #c53030;">in</span> D:
+    <span style="color: #805ad5;"># Match text with language-specific metadata</span>
+    text.matched_entry_ids = substr_match(text, M[text.lang])
+    entry_counts[text.lang][text.matched_entry_ids] += 1
+
+<span style="color: #2c5282; font-weight: bold;"># Stage 2: Compute t for each language</span>
+p = t_to_p(t_en, entry_counts["en"])  <span style="color: #805ad5;"># Get tail proportion from English</span>
+t = {}
+<span style="color: #c53030;">for</span> lang <span style="color: #c53030;">in</span> entry_counts:
+    t[lang] = p_to_t(p, entry_counts[lang])  <span style="color: #805ad5;"># Compute language-specific t</span>
+
+<span style="color: #2c5282; font-weight: bold;"># Stage 3: Balancing via sampling</span>
+entry_probs = {}
+<span style="color: #c53030;">for</span> lang <span style="color: #c53030;">in</span> entry_counts:
+    entry_counts[lang][entry_counts[lang] < t[lang]] = t[lang]
+    entry_probs[lang] = t[lang] / entry_counts[lang]
+
+D_star = []
+<span style="color: #c53030;">for</span> image, text <span style="color: #c53030;">in</span> D:
+    <span style="color: #c53030;">for</span> entry_id <span style="color: #c53030;">in</span> text.matched_entry_ids:
+        <span style="color: #c53030;">if</span> random.random() < entry_probs[text.lang][entry_id]:
+            D_star.append((image, text))
+            <span style="color: #c53030;">break</span></code></pre>
+          </div>
+
+          <div class="columns is-multiline" style="margin-top: 1rem;">
+            <div class="column is-4">
+              <div class="box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 100%; padding: 1.5rem;">
+                <h4 style="color: white; font-weight: bold; margin-bottom: 0.5rem;">Stage 1: Matching</h4>
+                <p style="color: rgba(255,255,255,0.95); font-size: 0.95rem;">Use language ID to match each text with language-specific metadata. Count matches per concept.</p>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 100%; padding: 1.5rem;">
+                <h4 style="color: white; font-weight: bold; margin-bottom: 0.5rem;">Stage 2: Thresholds</h4>
+                <p style="color: rgba(255,255,255,0.95); font-size: 0.95rem;">Compute language-specific threshold <em>t<sub>lang</sub></em> by maintaining 6% tail ratio from English.</p>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 100%; padding: 1.5rem;">
+                <h4 style="color: white; font-weight: bold; margin-bottom: 0.5rem;">Stage 3: Balancing</h4>
+                <p style="color: rgba(255,255,255,0.95); font-size: 0.95rem;">Sample pairs based on concept rarity. Tail concepts always included, head concepts downsampled.</p>
+              </div>
+            </div>
+          </div>
+
+          <p style="margin-top: 1.5rem;">
+            <strong>Result:</strong> From ~10.7B raw worldwide pairs → 2.5B curated pairs with balanced concept distribution across all 329 languages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────── Training Setup ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">Training at Scale: What Changes?</h2>
+          <p>
+            Beyond data curation, we need to rethink how we train the model. When you're adding 2.5× more data from non-English sources, 
+            you can't just plug it in and hope for the best. Here's what we changed:
+          </p>
+          <p>
+            <strong>Scaling seen pairs proportionally.</strong> 
+            Since English constitutes 44% of our curated data, we scale the number of seen training pairs by 2.3× (from 13B to 29B). 
+            This ensures English data gets the same exposure as before, while non-English data gets its fair share. 
+            We achieve this by increasing the global batch size from 32,768 to 75,366—keeping everything else (learning rate, warmup, etc.) unchanged.
+          </p>
+          <p>
+            <strong>Using a multilingual tokenizer.</strong> 
+            English tokenizers don't cut it for 329 languages. After testing four popular options (mT5, Gemma, XLM-Roberta, XLM-V), 
+            we found that <strong>XLM-V with its 900k vocabulary</strong> delivers the best performance on both English and multilingual benchmarks. 
+            It's the only architecture change we make—no custom layers, no translation modules, no architectural gymnastics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- ─────────────────────────────── Breaking the Curse ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">Breaking the Curse of Multilinguality</h2>
+          <p>
+            Here's the million-dollar question: <strong>why does adding multilingual data usually hurt English performance?</strong> 
+            We call this the "curse of multilinguality," and it's plagued every multilingual CLIP attempt until now.
+          </p>
+          <p>
+            The answer turns out to be surprisingly simple: <strong>insufficient model capacity</strong>.
+          </p>
+          <p>
+            When we train ViT-L/14 (the largest model OpenAI used) on worldwide data, the curse persists—English performance drops compared to English-only training. 
+            But when we scale up to ViT-H/14, something magical happens: <em>both</em> English and multilingual performance improve simultaneously. 
+            The model finally has enough capacity to learn from all that diverse data without forgetting English.
+          </p>
+          <p>
+            It's not just about memorizing more concepts. The larger model can maintain strong English understanding while building multilingual capabilities. 
+            This is the inflection point where worldwide data transforms from a liability into an asset.
+          </p>
+
+          <figure class="image my-5">
+            <img src="static/images/teaser.jpg" alt="Breaking the Curse of Multilinguality">
+            <figcaption class="has-text-grey" style="text-align: center; margin-top: 1rem;">
+              <strong>Left:</strong> ViT-L/14 suffers from the curse—worldwide data hurts English performance. 
+              ViT-H/14 breaks the curse: non-English data helps English.
+              <strong>Right:</strong> English data also helps non-English performance. Mutual benefits achieved!
+            </figcaption>
+          </figure>
+
+          <div class="box" style="background-color: #f0f7ff; border-left: 4px solid #667eea; padding: 1.5rem; margin-top: 1.5rem;">
+            <p style="margin-bottom: 0;"><strong>Key Insight:</strong> ViT-H/14 is the minimal viable model capacity for breaking the curse. 
+            With this architecture and our scaled training recipe, we achieve mutual benefits—English data helps multilingual performance, and multilingual data helps English performance. Win-win.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- ─────────────────────────────── Key Results Highlight ─────────────────────────────── -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <h2 class="title is-3 has-text-centered">Does It Actually Work?</h2>
+            <p class="has-text-centered" style="font-size:1.3rem; margin-bottom: 2rem;">
+              Let's cut to the chase. Here are the numbers that matter:
+            </p>
+            <div class="content" style="font-size:1.2rem;">
+              <div class="box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem;">
+                <div class="columns is-multiline">
+                  <div class="column is-half">
+                    <p style="margin-bottom:0.5rem;"><strong style="font-size:1.5rem; color: #fff;">81.3%</strong></p>
+                    <p style="color: rgba(255,255,255,0.9);">ImageNet zero-shot accuracy<br><em>(+0.8% vs English-only MetaCLIP)</em></p>
+                  </div>
+                  <div class="column is-half">
+                    <p style="margin-bottom:0.5rem;"><strong style="font-size:1.5rem; color: #fff;">64.3%</strong></p>
+                    <p style="color: rgba(255,255,255,0.9);">XM3600 image-to-text retrieval<br><em>(new SOTA, +1.5% vs mSigLIP)</em></p>
+                  </div>
+                  <div class="column is-half">
+                    <p style="margin-bottom:0.5rem;"><strong style="font-size:1.5rem; color: #fff;">57.4%</strong></p>
+                    <p style="color: rgba(255,255,255,0.9);">CVQA local questions<br><em>(+7.6% vs mSigLIP)</em></p>
+                  </div>
+                  <div class="column is-half">
+                    <p style="margin-bottom:0.5rem;"><strong style="font-size:1.5rem; color: #fff;">50.2%</strong></p>
+                    <p style="color: rgba(255,255,255,0.9);">Babel-ImageNet 280 languages<br><em>(+3.8% vs mSigLIP)</em></p>
+                  </div>
+                </div>
+                <hr style="background-color: rgba(255,255,255,0.3); margin: 1.5rem 0;">
+                <p class="has-text-centered" style="color: rgba(255,255,255,0.95); font-size: 1.1rem; margin-bottom:0;">
+                  <strong>Achieved with 72% fewer seen pairs and lower resolution than mSigLIP</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────── Main Results Comparison ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-11" style="font-size:1.3rem;">
+          <h2 class="title is-3">How Does MetaCLIP 2 Stack Up?</h2>
+          <p>
+            Let's compare MetaCLIP 2 against the current multilingual champions: mSigLIP, SigLIP 2, and XLM-CLIP. 
+            Remember, these are industrial-strength systems with lots of engineering tricks. We're keeping it simple—just better data curation and smart scaling.
+          </p>
+          
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table class="table is-fullwidth" style="font-size: 0.9rem; border-collapse: separate; border-spacing: 0;">
+              <thead style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <tr>
+                  <th rowspan="2" style="padding: 1rem; border: none; color: white !important;">Model</th>
+                  <th rowspan="2" style="padding: 1rem; border: none; color: white !important;">ViT Size</th>
+                  <th rowspan="2" style="padding: 1rem; border: none; color: white !important;">Seen Pairs</th>
+                  <th colspan="3" style="border-bottom: 1px solid rgba(255,255,255,0.3); text-align: center; padding: 1rem; border-left: none; border-right: none; border-top: none; color: white !important;">English Benchmarks</th>
+                  <th colspan="3" style="border-bottom: 1px solid rgba(255,255,255,0.3); text-align: center; padding: 1rem; border-left: none; border-right: none; border-top: none; color: white !important;">Multilingual Benchmarks</th>
+                </tr>
+                <tr>
+                  <th style="padding: 0.75rem 1rem; border: none; color: white !important;">ImageNet</th>
+                  <th style="padding: 0.75rem 1rem; border: none; color: white !important;">SLIP 26</th>
+                  <th style="padding: 0.75rem 1rem; border: none; color: white !important;">DC 37</th>
+                  <th style="padding: 0.75rem 1rem; border: none; color: white !important;">Babel-IN</th>
+                  <th style="padding: 0.75rem 1rem; border: none; color: white !important;">XM3600<br>T→I / I→T</th>
+                  <th style="padding: 0.75rem 1rem; border: none; color: white !important;">CVQA<br>EN / Local</th>
+                </tr>
+              </thead>
+              <tbody style="background: white;">
+                <tr style="color: #999; transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">XLM-CLIP</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">H/14</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">32B</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">77.0</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">69.4</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">65.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">34.0</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">50.4 / 60.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">56.1 / 48.2</td>
+                </tr>
+                <tr style="color: #999; transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">mSigLIP</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">SO400M</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">40B</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">80.6</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">69.1</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">65.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">46.4</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">50.0 / 62.8</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">56.8 / 49.8</td>
+                </tr>
+                <tr style="color: #999; transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">SigLIP 2</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">SO400M</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">40B</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">83.2</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">73.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">69.4</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">40.8</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">48.2 / 59.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">58.5 / 49.0</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">MetaCLIP (English)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">H/14</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">13B</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">80.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">72.4</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">66.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                </tr>
+                <tr style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%); font-weight: 600; transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>MetaCLIP 2 (Ours)</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;">H/14</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;">29B</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>81.3</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>74.5</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>69.6</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>50.2</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>51.5 / 64.3</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>61.5 / 57.4</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <strong>What stands out?</strong> MetaCLIP 2 dominates across the board with significantly fewer training pairs (29B vs 40B for SigLIP/mSigLIP). 
+            We beat mSigLIP by <strong>+0.7%</strong> on ImageNet, <strong>+5.4%</strong> on SLIP 26, and massive gains on multilingual tasks: 
+            <strong>+3.8%</strong> on Babel-ImageNet, <strong>+1.5% / +1.5%</strong> on XM3600 (T→I / I→T), and <strong>+4.7% / +7.6%</strong> on CVQA (EN / Local).
+          </p>
+          <p>
+            Notice how SigLIP 2 prioritizes English (90% English data) at the expense of multilingual performance—it's actually worse than mSigLIP on multilingual tasks. 
+            We don't have to make that trade-off. Our worldwide data helps <em>everything</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────── Data Ablation ─────────────────────────────── -->
+  <section class="section" style="background-color: #fafafa;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">The Power of Mixing: English + Non-English</h2>
+          <p>
+            Here's where it gets interesting. We ran a series of ablations to understand exactly how English and non-English data interact. 
+            Does adding non-English hurt English performance? Does English data help multilingual capabilities? Let's find out.
+          </p>
+          
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table class="table is-fullwidth" style="font-size: 0.95rem; border-collapse: separate; border-spacing: 0;">
+              <thead style="background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);">
+                <tr>
+                  <th style="padding: 1rem; border: none; color: white !important;">Configuration</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Model</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Seen Pairs</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">ImageNet</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Babel-IN</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">XM3600<br>T→I / I→T</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">CVQA<br>EN / Local</th>
+                </tr>
+              </thead>
+              <tbody style="background: white;">
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">English only</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">ViT-L/14</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">13B (1.0×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">79.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">Worldwide</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">ViT-L/14</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">29B (2.3×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #e74c3c;">78.8</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">44.2</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">45.3 / 58.2</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">59.2 / 55.1</td>
+                </tr>
+                <tr style="transition: all 0.2s; border-top: 2px solid rgba(118, 75, 162, 0.2);">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>English only</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>ViT-H/14</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">13B (1.0×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">80.4</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>Non-English only</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>ViT-H/14</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">17B (1.3×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #e74c3c;">71.4</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">49.9</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">46.9 / 59.9</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">59.8 / 56.8</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>Worldwide (no scale)</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>ViT-H/14</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">13B (1.0×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #e74c3c;">79.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">47.1</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">49.6 / 62.6</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">59.9 / 56.0</td>
+                </tr>
+                <tr style="background: linear-gradient(135deg, rgba(102, 234, 126, 0.15) 0%, rgba(72, 187, 120, 0.15) 100%); transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>Worldwide (scaled)</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>ViT-H/14</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;">29B (2.3×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; color: #27ae60; font-weight: 700;">81.3 ↑</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">50.2</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">51.5 / 64.3</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">61.5 / 57.4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <strong>Key observations:</strong>
+          </p>
+          <ul>
+            <li><strong>ViT-L/14 suffers from the curse</strong> — worldwide data at 2.3× seen pairs actually <em>hurts</em> English performance (78.8 vs 79.5). The model doesn't have enough capacity.</li>
+            <li><strong>ViT-H/14 needs scaling</strong> — at 1.0× seen pairs, we still see degradation (79.5 vs 80.4). Simply mixing data isn't enough.</li>
+            <li><strong>The magic recipe: ViT-H/14 + scaled pairs</strong> — English performance <em>improves</em> to 81.3 (+0.9%), while multilingual performance soars. This is the sweet spot.</li>
+            <li><strong>Mutual benefits are real</strong> — Compare "Non-English only" (71.4 ImageNet) vs "Worldwide scaled" (81.3). English data dramatically helps multilingual models on English tasks. Similarly, non-English data pushes English performance higher than English-only training.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────── Curation Ablation ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">Getting the Details Right: Curation Matters</h2>
+          <p>
+            We didn't get to the final recipe overnight. It took careful ablations to understand which design choices actually matter. 
+            Let's walk through the journey from English-only CLIP to full MetaCLIP 2:
+          </p>
+          
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table class="table is-fullwidth" style="font-size: 0.95rem; border-collapse: separate; border-spacing: 0;">
+              <thead style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <tr>
+                  <th style="width: 30%; padding: 1rem; border: none; color: white !important;">Step</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Configuration</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">ImageNet</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Babel-IN</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">XM3600<br>T→I / I→T</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">CVQA<br>EN / Local</th>
+                </tr>
+              </thead>
+              <tbody style="background: white;">
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>1. Baseline</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">English CLIP with English filter</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; font-weight: 600;">67.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>2. Remove filter</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">Use all alt-texts, English metadata</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">66.9</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">—</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>3. Add multilingual metadata</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">All metadata in one set, no isolation</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">62.1</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">31.2</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">37.8 / 49.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">49.8 / 45.8</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;"><strong>4. Language isolation</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">Separate metadata/texts by language, same <em>t</em></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">61.1</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; font-weight: 700;">31.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">37.9 / 49.4</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">49.0 / 46.5</td>
+                </tr>
+                <tr style="background: linear-gradient(135deg, rgba(102, 234, 126, 0.15) 0%, rgba(72, 187, 120, 0.15) 100%); transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>5. Language-specific <em>t</em></strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;">Compute <em>t<sub>lang</sub></em> per language (6% tail)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">64.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">31.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">38.1 / 50.0</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">50.3 / 46.6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <strong>What did we learn?</strong>
+          </p>
+          <ul>
+            <li><strong>Step 2:</strong> Simply removing the English filter hurts performance (−0.6%). Language identification and isolation are crucial.</li>
+            <li><strong>Step 3:</strong> Merging all metadata without language separation tanks English performance (−5.4%). Different languages need different treatment.</li>
+            <li><strong>Step 4:</strong> Language isolation helps, but using the same threshold <em>t</em> for all languages is still suboptimal. It lets head concepts dominate in smaller languages.</li>
+            <li><strong>Step 5:</strong> Language-specific thresholds <em>t<sub>lang</sub></em> based on the 6% tail ratio recover most of the lost performance (+3.6%). This is our final recipe.</li>
+          </ul>
+          
+          <p>
+            The moral of the story? <strong>Details matter.</strong> Naive multilingual scaling fails. But with careful, language-specific balancing, we can maintain strong performance across all languages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────── Cultural Diversity ─────────────────────────────── -->
+  <section class="section" style="background-color: #fafafa;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">Beyond Benchmarks: Cultural Diversity</h2>
+          <p>
+            Standard benchmarks are great, but they often miss something crucial: <strong>cultural and geographic diversity</strong>. 
+            Does our model understand concepts from around the world, not just North America and Western Europe?
+          </p>
+          <p>
+            We evaluated on benchmarks specifically designed to test cultural understanding: 
+            <strong>Dollar Street</strong> (objects from different income levels globally), 
+            <strong>GeoDE</strong> (geographically diverse objects), and 
+            <strong>GLDv2</strong> (landmark recognition). 
+            Here's how training data affects cultural understanding:
+          </p>
+
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table class="table is-fullwidth" style="font-size: 0.95rem; border-collapse: separate; border-spacing: 0;">
+              <thead style="background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);">
+                <tr>
+                  <th style="padding: 1rem; border: none; color: white !important;">Training Data</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Seen Pairs</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Dollar Street<br>Top-1 / Top-5</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">GLDv2</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">GeoDE</th>
+                </tr>
+              </thead>
+              <tbody style="background: white;">
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">English only</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">13B (1.0×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">37.2 / 63.3</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">52.8</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">93.4</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">Non-English only</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">17B (1.3×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #e74c3c;">35.7 / 61.3</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #27ae60; font-weight: 600;">68.6</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #e74c3c;">91.7</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">Worldwide (no scale)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">13B (1.0×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">37.2 / 63.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #27ae60; font-weight: 600;">65.8</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">94.3</td>
+                </tr>
+                <tr style="background: linear-gradient(135deg, rgba(102, 234, 126, 0.15) 0%, rgba(72, 187, 120, 0.15) 100%); transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>Worldwide (scaled)</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;">29B (2.3×)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">37.9 / 64.0</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; color: #27ae60; font-weight: 700;">69.0</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">93.4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <strong>The pattern is clear:</strong>
+          </p>
+          <ul>
+            <li><strong>Worldwide data dramatically improves landmark recognition</strong> — GLDv2 jumps from 52.8 to 69.0 (+16.2 points). 
+            English-only data has a strong Western bias; worldwide data fixes this.</li>
+            <li><strong>Cultural understanding improves consistently</strong> — Dollar Street top-1 accuracy improves from 37.2 to 37.9, 
+            but more importantly, the model maintains strong performance while gaining massive multilingual capabilities.</li>
+            <li><strong>Geographic coverage matters</strong> — Non-English data alone gives great GLDv2 results (68.6), 
+            but combining with English data pushes even higher (69.0). Diversity wins.</li>
+          </ul>
+
+          <p>
+            We also tested few-shot geo-localization on Dollar Street, GeoDE, and XM3600. The trend is consistent: 
+            worldwide training data leads to better geographic and cultural understanding. 
+            When you train on data from the actual world instead of just the English-speaking world, you get models that understand the actual world.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────── Tokenizer Comparison ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">Choosing the Right Tokenizer</h2>
+          <p>
+            One critical choice for multilingual models: which tokenizer to use? 
+            We tested four popular multilingual tokenizers on our ViT-B/32 model to find the winner:
+          </p>
+          
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table class="table is-fullwidth" style="font-size: 0.95rem; border-collapse: separate; border-spacing: 0;">
+              <thead style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <tr>
+                  <th style="padding: 1rem; border: none; color: white !important;">Tokenizer</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Vocab Size</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">ImageNet</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">Babel-IN</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">XM3600<br>T→I / I→T</th>
+                  <th style="padding: 1rem; border: none; color: white !important;">CVQA<br>EN / Local</th>
+                </tr>
+              </thead>
+              <tbody style="background: white;">
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">mT5 (used by mSigLIP)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">250k</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">64.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">31.5</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">38.1 / 50.0</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">50.3 / 46.6</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">Gemma (used by SigLIP 2)</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">256k</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">63.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #e74c3c;">26.1</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #e74c3c;">36.1 / 47.8</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; color: #e74c3c;">48.3 / 44.0</td>
+                </tr>
+                <tr style="transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">XLM-Roberta</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">250k</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">64.0</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">31.1</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">38.0 / 49.8</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0;">49.8 / 46.1</td>
+                </tr>
+                <tr style="background: linear-gradient(135deg, rgba(102, 234, 126, 0.15) 0%, rgba(72, 187, 120, 0.15) 100%); transition: all 0.2s;">
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0;"><strong>XLM-V (our choice)</strong></td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">900k</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; font-weight: 700;">64.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; color: #27ae60; font-weight: 700;">32.7</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; color: #27ae60; font-weight: 700;">40.0 / 51.4</td>
+                  <td style="padding: 0.75rem 1rem; border-bottom: 1px solid #e0e0e0; color: #27ae60; font-weight: 700;">50.4 / 47.4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <strong>XLM-V wins decisively</strong> on multilingual benchmarks (+1.2% on Babel-IN, +1.9% / +1.4% on XM3600 T→I / I→T, +0.1% / +0.8% on CVQA EN / Local) while matching English performance. 
+            Its massive 900k vocabulary provides better coverage for 329 languages, especially for languages with non-Latin scripts.
+          </p>
+          <p>
+            Interestingly, Gemma—used by the recent SigLIP 2—performs significantly worse on multilingual tasks despite having a comparable vocabulary size. 
+            This shows that vocabulary design matters just as much as vocabulary size.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────── Key Benefits ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">Why MetaCLIP 2 Matters</h2>
+          <p>
+            Let's step back and look at the bigger picture. What makes MetaCLIP 2 special? It's not just about hitting new benchmarks—it's about fundamentally rethinking how we build vision-language models.
+          </p>
+          
+          <div class="columns is-multiline" style="margin-top: 2rem;">
+            <div class="column is-half">
+              <div class="box" style="height: 100%; border-left: 4px solid #667eea;">
+                <h3 class="title is-5">🤝 Mutual Benefits</h3>
+                <p>For the first time, English and non-English data <em>help</em> each other. English performance improves when we add multilingual data (81.3% vs 80.5% on ImageNet), and multilingual performance soars with English data included. No more trade-offs.</p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box" style="height: 100%; border-left: 4px solid #764ba2;">
+                <h3 class="title is-5">🌍 Native Language Supervision</h3>
+                <p>Our model learns from alt-texts written by native speakers in 329 languages—not machine translations. This means authentic linguistic and cultural knowledge, not synthetic approximations.</p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box" style="height: 100%; border-left: 4px solid #667eea;">
+                <h3 class="title is-5">🎭 Cultural Diversity</h3>
+                <p>By training on worldwide web data, we capture concepts, landmarks, and visual patterns from every corner of the globe. The result? A model that understands "Taipei 101" as well as it understands "Empire State Building."</p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box" style="height: 100%; border-left: 4px solid #764ba2;">
+                <h3 class="title is-5">🚫 No-Filter Philosophy</h3>
+                <p>We removed the last major filter in CLIP training: language. By embracing all languages instead of discarding 60% of the web, we maximize diversity and minimize biases. More data, better models.</p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box" style="height: 100%; border-left: 4px solid #667eea;">
+                <h3 class="title is-5">🔬 Scientific Rigor</h3>
+                <p>Our recipe maximizes overlap with OpenAI CLIP and MetaCLIP—no proprietary data, no translation, no architectural tricks. Every change is carefully ablated and justified. The findings generalize.</p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box" style="height: 100%; border-left: 4px solid #764ba2;">
+                <h3 class="title is-5">🌐 Broader Impact</h3>
+                <p>This isn't just about CLIP. Our curation algorithm provides foundational worldwide data that benefits multimodal LLMs, self-supervised learning, and image generation models. It's a rising tide that lifts all boats.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────── Conclusion ─────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10" style="font-size:1.3rem;">
+          <h2 class="title is-3">Wrapping Up</h2>
+          <p>
+            So what have we learned? Training CLIP on worldwide web data doesn't have to be complicated. 
+            With a few carefully chosen changes to data curation—extending substring matching to 329 languages and using a constant tail ratio for balancing—we get something remarkable: 
+            <strong>English and non-English data actually help each other</strong>.
+          </p>
+          <p>
+            The results prove it. We achieve new state-of-the-art on multilingual benchmarks while also improving English-only performance. 
+            No translation hacks, no custom architectures, no curse of multilinguality. Just a simple, scalable recipe that works.
+          </p>
+          <p>
+            All our code and models are open source. We hope this makes it easier for the community to build even better multilingual vision-language models. 
+            Because at the end of the day, AI should work for everyone, not just English speakers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 <!-- ─────────────────────────────── BibTeX ─────────────────────────────── -->
 <section class="section">
   <div class="container is-max-desktop">
